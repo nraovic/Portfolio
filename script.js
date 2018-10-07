@@ -17,6 +17,7 @@ for (let project of projectsData) {
   const li = document.createElement('li');
   const link = document.createElement('a');
   const h2 = document.createElement('h2');
+  h2.className = 'project-title';
   h2.textContent = project.title;
   link.href = '#';
   link.appendChild(h2);
