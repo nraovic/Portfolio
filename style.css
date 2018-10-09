@@ -121,8 +121,8 @@ p {
   z-index: 10;
   text-align: center;
   vertical-align: middle;
-  background-color: #ffb9bb;
-  opacity: 0.9;
+  background-color: #fff;
+  opacity: 0.6;
 }
 .open {
   display: block;
@@ -130,6 +130,44 @@ p {
 .hide {
   display: none;
 }
+
+.shape:nth-child(odd) {
+  transform: scale(3);
+  animation: move-right 60s infinite;
+}
+.shape:nth-child(even) {
+  transform: scale(3);
+  animation: move-left 60s infinite;
+}
+@keyframes move-left {
+  0% {
+    left: position scale(6);
+  }
+  50% {
+    left: position - 10%;
+    -webkit-transform: rotate(180deg) scale(6);
+  }
+  100% {
+    left: position;
+    -webkit-transform: rotate(360deg) scale(3);
+  }
+}
+
+@keyframes move-right {
+  0% {
+    left: position scale(6);
+  }
+  50% {
+    left: position + 20%;
+    -webkit-transform: rotate(180deg) scale(6);
+  }
+
+  100% {
+    left: position;
+    -webkit-transform: rotate(360deg) scale(3);
+  }
+}
+
 @media (min-width: 426px) {
   .container {
     padding: 1.8rem;
