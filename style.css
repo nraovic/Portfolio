@@ -31,7 +31,13 @@ p {
   padding: 1.2rem;
   top: 0;
   width: 100%;
-  background-color: #fff;
+}
+.logo {
+  font-size: 1.4rem;
+}
+.logo .r {
+  margin-left: -11.4px;
+  color: #ffb9bb;
 }
 .logo,
 .contact-icons,
