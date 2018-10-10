@@ -145,6 +145,14 @@ p {
   transform: scale(3);
   animation: move-left 60s infinite;
 }
+.big-shape:nth-child(odd) {
+  transform: scale(18);
+  animation: move-big-right 60s infinite;
+}
+.big-shape:nth-child(even) {
+  transform: scale(18);
+  animation: move-big-left 60s infinite;
+}
 @keyframes move-left {
   0% {
     left: position scale(6);
@@ -164,13 +172,37 @@ p {
     left: position scale(6);
   }
   50% {
-    left: position + 20%;
-    -webkit-transform: rotate(180deg) scale(6);
+    left: position + 10%;
+    -webkit-transform: rotate(-180deg) scale(6);
   }
 
   100% {
     left: position;
     -webkit-transform: rotate(360deg) scale(3);
+  }
+}
+@keyframes move-big-left {
+  0% {
+    -webkit-transform: scale(18);
+  }
+  50% {
+    -webkit-transform: rotate(180deg) scale(6);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(18);
+  }
+}
+
+@keyframes move-big-right {
+  0% {
+    -webkit-transform: scale(18);
+  }
+  50% {
+    -webkit-transform: rotate(-180deg) scale(6);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg) scale(18);
   }
 }
 
