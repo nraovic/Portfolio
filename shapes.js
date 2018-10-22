@@ -1,8 +1,8 @@
-const listOfShapes = [, '◦', '▶', '◯', '◗'];
-const listOfBigShapes = ['△', '◻', '◯', '☓'];
+const listOfShapes = [, '◦', '▶', '◯', '◗', '☓', '△'];
+const listOfBigShapes = [];
 
 const numberofShapes = 7;
-const numberofBigShapes = 2;
+const numberofBigShapes = 1;
 
 const scale = 6;
 const bigShapesScale = 18;
