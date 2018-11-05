@@ -46,12 +46,8 @@ p {
 .contact-icon {
   display: inline-block;
   padding-left: 0.5rem;
-
 }
 
-.contact-icon:hover {
-  zoom: 1.2;
-}
 /*** Main ***/
 
 .about-me {
@@ -139,7 +135,14 @@ p {
 .hide {
   display: none;
 }
-
+.close-modal {
+  float: right;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.project-modal h3 {
+  clear: right;
+}
 .shape:nth-child(odd) {
   transform: scale(3);
   animation: move-right 60s infinite;
