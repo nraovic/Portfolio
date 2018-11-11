@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-size: 1.2rem;
   font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 * {
   box-sizing: border-box;
@@ -79,7 +80,6 @@ p {
   text-align: center;
   vertical-align: middle;
   background-clip: content-box;
-  opacity: 0.8;
 }
 .projects-list li:nth-child(odd) a {
   padding: 2rem 0;
@@ -143,72 +143,35 @@ p {
 .project-modal h3 {
   clear: right;
 }
+
 .shape:nth-child(odd) {
-  transform: scale(3);
-  animation: move-right 60s infinite;
-}
-.shape:nth-child(even) {
-  transform: scale(3);
   animation: move-left 60s infinite;
 }
-.big-shape:nth-child(odd) {
-  transform: scale(18);
-  animation: move-big-right 60s infinite;
+.shape:nth-child(even) {
+  animation: move-right 60s infinite;
 }
-.big-shape:nth-child(even) {
-  transform: scale(18);
-  animation: move-big-left 60s infinite;
-}
+
 @keyframes move-left {
   0% {
-    left: position scale(6);
+    transform: translateX(0) scale(3);
   }
   50% {
-    left: position - 10%;
-    -webkit-transform: rotate(180deg) scale(6);
+    transform: translate(20px, 20px) rotate(-240deg) scale(7);
   }
   100% {
-    left: position;
-    -webkit-transform: rotate(360deg) scale(3);
+    transform: translateX(0) rotate(0deg) scale(3);
   }
 }
 
 @keyframes move-right {
   0% {
-    left: position scale(6);
+    transform: translateX(0) scale(18);
   }
   50% {
-    left: position + 10%;
-    -webkit-transform: rotate(-180deg) scale(6);
-  }
-
-  100% {
-    left: position;
-    -webkit-transform: rotate(360deg) scale(3);
-  }
-}
-@keyframes move-big-left {
-  0% {
-    -webkit-transform: scale(18);
-  }
-  50% {
-    -webkit-transform: rotate(180deg) scale(6);
+    transform: translate(-50px, -10px) rotate(20deg) scale(12);
   }
   100% {
-    -webkit-transform: rotate(360deg) scale(18);
-  }
-}
-
-@keyframes move-big-right {
-  0% {
-    -webkit-transform: scale(18);
-  }
-  50% {
-    -webkit-transform: rotate(-180deg) scale(6);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg) scale(18);
+    transform: translateX(0) rotate(0deg) scale(18);
   }
 }
 
