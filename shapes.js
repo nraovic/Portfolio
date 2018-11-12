@@ -3,9 +3,10 @@ const colors = ['#ADC4A0', '#F4EEB4', '#7C7875', '#55897D', '#ADC4A0', '#F4EEB4'
 
 const numberofShapes = 4;
 
+/*TO DO: Fix the bug with the clientWidth/Height = 0*/
 function getRandomPosition(element) {
-  var x = document.body.offsetHeight - element.clientHeight;
-  var y = document.body.offsetWidth - element.clientWidth;
+  var x = document.body.offsetHeight - 100; //clientHeight is 0
+  var y = document.body.offsetWidth - 100; //clientWidth is 0
   var randomX = Math.floor(Math.random() * x);
   var randomY = Math.floor(Math.random() * y);
   return [randomX, randomY];

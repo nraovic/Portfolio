@@ -119,7 +119,7 @@ for (let project of projectsData) {
   h2.textContent = project.title;
   /*randomPercent = Math.floor(Math.random() * 100);
   console.log(randomPercent);
-  link.style.background = `background: linear-gradient(to top, #e8e3c7 80%, #adc4a0 80%) content-box;`;
+  li.style.background = `background: linear-gradient(to top, #e8e3c7 80%, #adc4a0 80%) content-box;`;
   console.log(randomPercent);
   */
   link.href = '#';
