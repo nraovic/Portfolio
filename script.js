@@ -117,6 +117,11 @@ for (let project of projectsData) {
   const h2 = document.createElement('h2');
   h2.className = 'project-title';
   h2.textContent = project.title;
+  /*randomPercent = Math.floor(Math.random() * 100);
+  console.log(randomPercent);
+  link.style.background = `background: linear-gradient(to top, #e8e3c7 80%, #adc4a0 80%) content-box;`;
+  console.log(randomPercent);
+  */
   link.href = '#';
   link.appendChild(h2);
   li.appendChild(link);

@@ -1,5 +1,5 @@
-const listOfShapes = ['◦', '▶', '◯', '◗', '☓', '△'];
-const colors = ['#55897D', '#ADC4A0', '#F4EEB4', '#7C7875', '#EB98B2', '#55897D', '#ADC4A0', '#F4EEB4'];
+const listOfShapes = ['◦', '◦', '◦', '◎', '◯'];
+const colors = ['#ADC4A0', '#F4EEB4', '#7C7875', '#55897D', '#ADC4A0', '#F4EEB4'];
 
 const numberofShapes = 4;
 

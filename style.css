@@ -24,7 +24,10 @@ p {
   padding: 0;
   font-weight: 400;
 }
-
+@font-face {
+  font-family: 'Kanji';
+  src: url(fonts/Kanji_PA.ttf) format('truetype');
+}
 /*** Header ***/
 .header {
   position: fixed;
@@ -58,6 +61,7 @@ p {
 }
 .about-me .title {
   font-size: 2.3rem;
+  font-weight: bold;
 }
 .about-me .description {
   padding-top: 1.2rem;
@@ -71,6 +75,7 @@ p {
   padding-left: 0.3rem;
 }
 .portfolio {
+  padding: 0 1.3rem;
   margin-top: 7rem;
 }
 .projects-list li {
@@ -80,7 +85,9 @@ p {
   text-align: center;
   vertical-align: middle;
   background-clip: content-box;
+  filter: drop-shadow(5px 5px 3px #333);
 }
+
 .projects-list li:nth-child(odd) a {
   padding: 2rem 0;
   position: absolute;
@@ -88,7 +95,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(#ffe1c7 0%, #c28285) content-box;
+  background: linear-gradient(to top, #e8e3c7 80%, #adc4a0 80%) content-box;
 }
 .projects-list li:nth-child(even) a {
   padding: 0 2rem;
@@ -97,24 +104,24 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(#ffe1c7 0%, #c9cb81) content-box;
+  background: linear-gradient(to bottom, #c9cb81 80%, #e8e3c7 80%) content-box;
 }
-.projects-list a:hover {
-  zoom: 0.9;
-}
+
 .project-title {
-  font-family: 'Monoton', cursive;
-  font-weight: 200;
-  padding: 2rem;
+  padding: 4rem;
+  font-weight: bold;
+  line-height: 160%;
   padding-top: 6rem;
   font-size: 1.4rem;
   text-transform: uppercase;
+  word-spacing: 1000px;
+  color: #585454;
 }
 
 .footer {
-  padding: 1.2rem;
+  padding-top: 5rem;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
 }
 
 /*** Modal ***/
@@ -189,9 +196,23 @@ p {
   }
 }
 @media (min-width: 1024px) {
+  .about-me .title {
+    font-size: 4rem;
+    font-weight: 900;
+  }
+  .about-me .description {
+    font-size: 1.5rem;
+  }
+  .about-me .view-portfolio {
+    font-size: 2rem;
+  }
   .portfolio {
     max-width: 1200px;
     margin: auto;
-    margin-top: 7rem;
+    margin-top: 12rem;
+  }
+
+  .projects-list li:hover {
+    filter: drop-shadow(3px 3px 2px #333);
   }
 }
