@@ -52,7 +52,7 @@ const projectsData = [
   }
 ];
 
-const container = document.querySelector('.container');
+const projectDiv = document.querySelector('.project');
 
 const modal = document.querySelector('.modal');
 
@@ -91,7 +91,7 @@ const createModal = (project, id) => {
   modal.appendChild(website);
   modal.appendChild(github);
 
-  document.body.insertBefore(modal, container);
+  projectDiv.appendChild(modal);
   return modal;
 };
 //

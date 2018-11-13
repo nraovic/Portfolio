@@ -2,11 +2,11 @@ const listOfShapes = ['◦', '◦', '◦', '◎', '◯'];
 const colors = ['#ADC4A0', '#F4EEB4', '#7C7875', '#55897D', '#ADC4A0', '#F4EEB4'];
 
 const numberofShapes = 4;
+const project = document.querySelector('.project');
 
-/*TO DO: Fix the bug with the clientWidth/Height = 0*/
 function getRandomPosition(element) {
-  var x = document.body.offsetHeight - 100; //clientHeight is 0
-  var y = document.body.offsetWidth - 100; //clientWidth is 0
+  var x = Math.abs(project.offsetHeight - element.offsetHeight);
+  var y = Math.abs(project.offsetWidth - element.offsetWidth);
   var randomX = Math.floor(Math.random() * x);
   var randomY = Math.floor(Math.random() * y);
   return [randomX, randomY];
@@ -19,10 +19,10 @@ window.onload = function() {
     while (i < numberofShapes) {
       const shapeElement = document.createElement('div');
       shapeElement.setAttribute('style', 'position:absolute;');
-      document.body.appendChild(shapeElement);
-      var xy = getRandomPosition(shapeElement);
+      project.appendChild(shapeElement);
       shapeElement.className = 'shape';
       shapeElement.textContent = shape;
+      var xy = getRandomPosition(shapeElement);
       shapeElement.style.top = xy[0] + 'px';
       shapeElement.style.left = xy[1] + 'px';
       shapeElement.style.zIndex = -1;
