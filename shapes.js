@@ -1,5 +1,5 @@
 const listOfShapes = ['◦', '◦', '◦', '◎', '◯'];
-const colors = ['#ADC4A0', '#F4EEB4', '#7C7875', '#55897D', '#ADC4A0', '#F4EEB4'];
+const colors = ['#ADC4A0', '#f1e5d8', '#7C7875', '#55897D', '#ADC4A0', '#d2b48c', 'faf0ee'];
 
 const numberofShapes = 4;
 const project = document.querySelector('.project');

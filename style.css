@@ -37,7 +37,7 @@ p {
   position: fixed;
   width: 100%;
   z-index: 1;
-  padding: 1.2rem 2rem;
+  padding: 1.2rem;
   top: 0;
   display: flex;
   justify-content: space-between;
@@ -64,16 +64,16 @@ p {
   padding-top: 11rem;
 }
 .about-me .title {
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 .about-me .description {
   padding-top: 1.2rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .about-me .view-portfolio {
   padding-top: 1.8rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 .arrow-down {
   padding-left: 0.3rem;
@@ -99,7 +99,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to top, #e8e3c7 80%, #adc4a0 80%) content-box;
+  background: linear-gradient(to top, #f5f3ef 80%, #c1d9c3 80%) content-box;
 }
 .projects-list li:nth-child(even) a {
   padding: 0 2rem;
@@ -108,7 +108,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, #c9cb81 80%, #e8e3c7 80%) content-box;
+  background: linear-gradient(to bottom, #c4bbb0 80%, #f5f3ef 80%) content-box;
 }
 
 .project-title {
@@ -116,7 +116,7 @@ p {
   font-weight: bold;
   line-height: 160%;
   padding-top: 4rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-transform: uppercase;
   word-spacing: 1000px;
   color: #585454;
