@@ -123,9 +123,9 @@ p {
 }
 
 .footer {
-  padding-top: 5rem;
+  padding: 3rem 0;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 /*** Modal ***/
@@ -186,7 +186,22 @@ p {
   }
 }
 
-@media (min-width: 426px) {
+@media (min-width: 600px) and (max-width: 850px) {
+  .projects-list {
+    padding: 0 3rem;
+  }
+}
+@media (min-width: 426px) and (max-width: 850px) {
+  .project-title {
+    padding: 2.5rem;
+    font-weight: bold;
+    line-height: 160%;
+    padding-top: 7rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 851px) {
   .container {
     padding: 1.8rem;
   }
@@ -218,5 +233,8 @@ p {
 
   .projects-list li:hover {
     filter: drop-shadow(3px 3px 2px #333);
+  }
+  .footer {
+    font-size: 1.2rem;
   }
 }
