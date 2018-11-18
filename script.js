@@ -1,8 +1,24 @@
 const projectsData = [
-  { title: 'Neighbourhood Map', githubLink: '', website: '' },
-  { title: 'MyReads: A Book Tracking App', githubLink: '', website: '' },
+  {
+    title: 'Neighbourhood Map',
+    photoUrl: 'photos/NeighborhoodMapPrint.png',
+    description:
+      'A React single page application with a listing of the cafes in central Copenhagen. Foursquare API and Google Maps API powered.',
+    photoAlt: 'Neighbourhood Map Project Print Screens',
+    githubLink: 'https://github.com/nraovic/neighborhood-map-app',
+    website: 'https://nraovic.github.io/neighborhood-map-app/'
+  },
+  {
+    title: 'MyReads: A Book Tracking App',
+    photoUrl: 'photos/MyReadsPrint.png',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    githubLink: '',
+    website: ''
+  },
   {
     title: 'Restaurant Reviews App',
+    photoUrl: 'photos/RestaurantsPrint.png',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     githubLink: 'https://github.com/nraovic/neighborhood-map-app',
@@ -10,6 +26,7 @@ const projectsData = [
   },
   {
     title: 'Feed Reader Testing',
+    photoUrl: 'photos/MyReadsPrint.png',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     githubLink: '',
@@ -17,6 +34,8 @@ const projectsData = [
   },
   {
     title: 'Classic Arcade Game Clone',
+    photoUrl: 'photos/ClassicArcadeGamePrint.png',
+
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     githubLink: '',
@@ -24,6 +43,8 @@ const projectsData = [
   },
   {
     title: 'Memory Game',
+    photoUrl: 'photos/MemoryGamePrint.png',
+
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     githubLink: '',
@@ -65,9 +86,15 @@ const createModal = (project, id) => {
   const closeSign = document.createElement('i');
   closeSign.classList.add('fas', 'fa-times');
   closeModal.appendChild(closeSign);
+  const container = document.createElement('div');
+  container.className = 'container-modal';
   const title = document.createElement('h3');
-  title.textContent = project.title;
+  title.textContent = project.title.toUpperCase();
   title.className = 'project-title-modal';
+  const photo = document.createElement('img');
+  photo.src = project.photoUrl;
+  photo.alt = project.photoAlt;
+  photo.className = 'project-photo-modal';
   const description = document.createElement('p');
   description.textContent = project.description;
   description.className = 'project-description-modal';
@@ -75,21 +102,24 @@ const createModal = (project, id) => {
   website.className = 'project-website-modal';
   const projectLink = document.createElement('a');
   projectLink.href = project.website;
-  projectLink.textContent = 'See the project';
+  projectLink.textContent = 'View Website'.toUpperCase();
   projectLink.target = '_blank';
   website.appendChild(projectLink);
   const github = document.createElement('p');
   github.className = 'project-github-modal';
   const githubLink = document.createElement('a');
   githubLink.href = project.githubLink;
-  githubLink.textContent = 'See the project on Github';
+  githubLink.textContent = 'View on Github'.toUpperCase();
   githubLink.target = '_blank';
   github.appendChild(githubLink);
   modal.appendChild(closeModal);
-  modal.appendChild(title);
-  modal.appendChild(description);
-  modal.appendChild(website);
-  modal.appendChild(github);
+  modal.appendChild(container);
+
+  container.appendChild(title);
+  container.appendChild(photo);
+  container.appendChild(description);
+  container.appendChild(website);
+  container.appendChild(github);
 
   projectDiv.appendChild(modal);
   return modal;
@@ -122,26 +152,21 @@ for (let project of projectsData) {
   li.style.background = `background: linear-gradient(to top, #e8e3c7 80%, #adc4a0 80%) content-box;`;
   console.log(randomPercent);
   */
-  link.href = '#';
   link.appendChild(h2);
+  link.href = '#';
   li.appendChild(link);
   projectsList.appendChild(li);
 
   const modal = createModal(project, id);
   const close = document.querySelector(`#${id} .close-modal`);
-  const header = document.querySelector('.header');
-  const main = document.querySelector('.main');
-  const footer = document.querySelector('.footer');
-  link.onclick = () => {
+  link.onclick = event => {
+    event.preventDefault();
     openModal(modal);
-    for (let i of [header, main, footer]) {
-      i.classList.add('hide');
-    }
-  };
-  close.onclick = () => {
-    closeModal(modal);
-    for (let i of [header, main, footer]) {
-      i.classList.remove('hide');
-    }
+    // So the scroll from the main page doesn't show up
+    document.body.style.overflow = 'hidden';
+    close.onclick = () => {
+      closeModal(modal);
+      document.body.style.overflow = 'visible';
+    };
   };
 }
