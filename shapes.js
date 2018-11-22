@@ -1,8 +1,10 @@
-const listOfShapes = ['◦', '◦', '◦', '◎', '◯'];
-const colors = ['#ADC4A0', '#f1e5d8', '#7C7875', '#55897D', '#ADC4A0', '#d2b48c', 'faf0ee'];
+const listOfShapes = ['◦', '◦', '◎', '◯'];
+const colors = ['#ADC4A0', '#f1e5d8', '#7C7875', '#55897D', '#ADC4A0', '#d2b48c', '#faf0ee'];
 
-const numberofShapes = 4;
+const numberofShapes = 8;
 const project = document.querySelector('.project');
+console.log(document.body.clientHeight, document.body.clientWidth);
+console.log(project.clientHeight, project.clientWidth);
 
 function getRandomPosition(element) {
   var x = Math.abs(project.offsetHeight - element.offsetHeight);
@@ -26,7 +28,7 @@ window.onload = function() {
       shapeElement.style.top = xy[0] + 'px';
       shapeElement.style.left = xy[1] + 'px';
       shapeElement.style.zIndex = -1;
-      shapeElement.style.opacity = 0.4;
+      shapeElement.style.opacity = 0.2;
       shapeElement.style.color = colors[Math.floor(Math.random() * colors.length)];
       i++;
     }

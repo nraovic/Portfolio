@@ -1,6 +1,7 @@
 const projectsData = [
   {
     title: 'Neighbourhood Map',
+    keywords: 'React; JavaScript; HTML5; CSS3; Responsive;',
     photoUrl: 'photos/NeighborhoodMapPrint.png',
     description:
       'A React single page application with a listing of the cafes in central Copenhagen. Foursquare API and Google Maps API powered.',
@@ -10,6 +11,7 @@ const projectsData = [
   },
   {
     title: 'MyReads: A Book Tracking App',
+    keywords: 'React; JavaScript; HTML5; CSS3; Responsive;',
     photoUrl: 'photos/MyReadsPrint.png',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -18,6 +20,7 @@ const projectsData = [
   },
   {
     title: 'Restaurant Reviews App',
+    keywords: 'JavaScript; HTML5; CSS3; Responsive; Service Worker; Accessibility;',
     photoUrl: 'photos/RestaurantsPrint.png',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -26,6 +29,7 @@ const projectsData = [
   },
   {
     title: 'Feed Reader Testing',
+    keywords: 'JavaScript; Jasmin;',
     photoUrl: 'photos/MyReadsPrint.png',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -34,6 +38,7 @@ const projectsData = [
   },
   {
     title: 'Classic Arcade Game Clone',
+    keywords: 'JavaScript; HTML5; CSS3;',
     photoUrl: 'photos/ClassicArcadeGamePrint.png',
 
     description:
@@ -43,6 +48,7 @@ const projectsData = [
   },
   {
     title: 'Memory Game',
+    keywords: 'React; JavaScript; HTML5; CSS3; Responsive;',
     photoUrl: 'photos/MemoryGamePrint.png',
 
     description:
@@ -52,6 +58,7 @@ const projectsData = [
   },
   {
     title: 'UHost',
+    keywords: 'JavaScript; HTML5; CSS3;',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     githubLink: '',
@@ -59,6 +66,7 @@ const projectsData = [
   },
   {
     title: 'Interactive Resume',
+    keywords: 'JavaScript; Jquery; D3.js; HTML5; CSS3; Responsive;',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     githubLink: '',
@@ -66,6 +74,7 @@ const projectsData = [
   },
   {
     title: 'Portfolio Site',
+    keywords: 'JavaScript; HTML5; CSS3; Bootstrap; Responsive',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     githubLink: '',
@@ -144,16 +153,30 @@ for (let project of projectsData) {
     .toLowerCase()}`;
   const li = document.createElement('li');
   const link = document.createElement('a');
+  const divWrap = document.createElement('div');
+  const projectTitleWrap = document.createElement('div');
+  const projectKeywordsWrap = document.createElement('div');
+
   const h2 = document.createElement('h2');
+  const keywords = document.createElement('p');
+  link.href = '#';
+  divWrap.className = 'div-wrap';
+  projectTitleWrap.className = 'project-title-wrap';
+  projectKeywordsWrap.className = 'project-keywords-wrap';
   h2.className = 'project-title';
+  keywords.className = 'project-keywords';
+  keywords.textContent = project.keywords;
   h2.textContent = project.title;
   /*randomPercent = Math.floor(Math.random() * 100);
   console.log(randomPercent);
   li.style.background = `background: linear-gradient(to top, #e8e3c7 80%, #adc4a0 80%) content-box;`;
   console.log(randomPercent);
   */
-  link.appendChild(h2);
-  link.href = '#';
+  link.appendChild(divWrap);
+  divWrap.appendChild(projectTitleWrap);
+  divWrap.appendChild(projectKeywordsWrap);
+  projectTitleWrap.appendChild(h2);
+  projectKeywordsWrap.appendChild(keywords);
   li.appendChild(link);
   projectsList.appendChild(li);
 
@@ -166,7 +189,7 @@ for (let project of projectsData) {
     document.body.style.overflow = 'hidden';
     close.onclick = () => {
       closeModal(modal);
-      document.body.style.overflow = 'visible';
+      document.body.style.overflow = 'auto';
     };
   };
 }
