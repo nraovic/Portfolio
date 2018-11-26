@@ -14,16 +14,16 @@ const projectsData = [
     keywords: 'React; JavaScript; HTML5; CSS3; Responsive;',
     photoUrl: 'photos/MyReadsPrint.png',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    githubLink: '',
-    website: ''
+      'A SPA that manages an online library. Built with React and React Router and bootstraped with Create React App.',
+    githubLink: 'https://github.com/nraovic/reactnd-project-myreads-starter',
+    website: 'https://nraovic.github.io/reactnd-project-myreads-starter/'
   },
   {
     title: 'Restaurant Reviews App',
     keywords: 'JavaScript; HTML5; CSS3; Responsive; Service Worker; Accessibility;',
     photoUrl: 'photos/RestaurantsPrint.png',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'The aim of the project was to convert the design of a static page to be responsive and accessible for screen reader use. Additionaly, Service worker is enabled to creae a seamless offline experience for the users.',
     githubLink: 'https://github.com/nraovic/neighborhood-map-app',
     website: 'https://nraovic.github.io/neighborhood-map-app/'
   },
@@ -32,53 +32,47 @@ const projectsData = [
     keywords: 'JavaScript; Jasmin;',
     photoUrl: 'photos/MyReadsPrint.png',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    githubLink: '',
-    website: ''
+      'The aim was to write a number of test suites in Jasmine for a web-based application that reads RSS feeds.',
+    githubLink: 'https://github.com/nraovic/frontend-nanodegree-feedreader',
+    website: 'https://nraovic.github.io/frontend-nanodegree-feedreader/'
   },
   {
     title: 'Classic Arcade Game Clone',
     keywords: 'JavaScript; HTML5; CSS3;',
     photoUrl: 'photos/ClassicArcadeGamePrint.png',
-
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    githubLink: '',
-    website: ''
+      'The aim of this project was to add a number of entities to the game with a game loop engine including the player characters and enemies to recreate the classic arcade game Frogger.',
+    githubLink: 'https://github.com/nraovic/Classic-arcade-game-clone-project',
+    website: 'https://nraovic.github.io/Classic-arcade-game-clone-project/'
   },
   {
     title: 'Memory Game',
     keywords: 'React; JavaScript; HTML5; CSS3; Responsive;',
     photoUrl: 'photos/MemoryGamePrint.png',
-
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    githubLink: '',
-    website: ''
+    description: 'A browser-based card matching game (also known as Concentration).',
+    githubLink: 'https://github.com/nraovic/fend-project-memory-game',
+    website: 'https://nraovic.github.io/fend-project-memory-game/'
   },
   {
     title: 'UHost',
     keywords: 'JavaScript; HTML5; CSS3;',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'A dummy website developed for the CSS Fundamentals course covering all the major topics in CSS including Flexbox, Grid, Animation and Transitions',
     githubLink: '',
     website: ''
   },
   {
     title: 'Interactive Resume',
     keywords: 'JavaScript; Jquery; D3.js; HTML5; CSS3; Responsive;',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    githubLink: '',
-    website: ''
+    githubLink: 'https://github.com/nraovic/frontend-nanodegree-resume',
+    website: 'https://nraovic.github.io/Interactive-Resume/'
   },
   {
     title: 'Portfolio Site',
     keywords: 'JavaScript; HTML5; CSS3; Bootstrap; Responsive',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    githubLink: '',
-    website: ''
+    description: 'A first portfolio site hosting the projects from the Nanodegree',
+    githubLink: 'https://github.com/nraovic/Build-a-Portfolio-Site',
+    website: 'https://nraovic.github.io/Build-a-Portfolio-Site/'
   }
 ];
 
