@@ -78,55 +78,86 @@ const projectsData = [
 
 const projectDiv = document.querySelector('.project');
 
-const modal = document.querySelector('.modal');
-
-const createModal = (project, id) => {
+function addModal(project, id) {
+  const projectDiv = document.querySelector('.project');
   const modal = document.createElement('div');
   modal.id = id;
   modal.className = 'project-modal';
+  projectDiv.appendChild(modal);
+  modal.appendChild(createModalClose());
+  modal.appendChild(createModalContainer(project));
+  return modal;
+}
+function createModalClose() {
   const closeModal = document.createElement('a');
   closeModal.className = 'close-modal';
   const closeSign = document.createElement('i');
   closeSign.classList.add('fas', 'fa-times');
   closeModal.appendChild(closeSign);
+  return closeModal;
+}
+function createModalContainer(project) {
   const container = document.createElement('div');
   container.className = 'container-modal';
+  if (project.title && project.title.length > 0) {
+    container.appendChild(createModalTitle(project.title));
+  }
+  if (project.photoUrl && project.photoUrl.length > 0) {
+    container.appendChild(createModalPhoto(project.photoUrl, project.photoAlt));
+  }
+  if (project.description && project.description.length > 0) {
+    container.appendChild(createModalDescription(project.description));
+  }
+  if (project.website && project.website.length > 0) {
+    container.appendChild(createModalWebpage(project.website));
+  }
+  if (project.githubLink && project.githubLink.length > 0) {
+    container.appendChild(createModalGithubPage(project.githubLink));
+  }
+  return container;
+}
+
+function createModalTitle(content) {
   const title = document.createElement('h3');
-  title.textContent = project.title.toUpperCase();
+  title.textContent = content.toUpperCase();
   title.className = 'project-title-modal';
+  return title;
+}
+function createModalPhoto(url, alt) {
   const photo = document.createElement('img');
-  photo.src = project.photoUrl;
-  photo.alt = project.photoAlt;
+  photo.src = url;
+  photo.alt = alt;
   photo.className = 'project-photo-modal';
+  return photo;
+}
+function createModalDescription(content) {
   const description = document.createElement('p');
-  description.textContent = project.description;
+  description.textContent = content;
   description.className = 'project-description-modal';
+  return description;
+}
+
+function createModalWebpage(content) {
   const website = document.createElement('p');
   website.className = 'project-website-modal';
   const projectLink = document.createElement('a');
-  projectLink.href = project.website;
+  projectLink.href = content;
   projectLink.textContent = 'View Website'.toUpperCase();
   projectLink.target = '_blank';
   website.appendChild(projectLink);
+  return website;
+}
+function createModalGithubPage(content) {
   const github = document.createElement('p');
   github.className = 'project-github-modal';
   const githubLink = document.createElement('a');
-  githubLink.href = project.githubLink;
+  githubLink.href = content;
   githubLink.textContent = 'View on Github'.toUpperCase();
   githubLink.target = '_blank';
   github.appendChild(githubLink);
-  modal.appendChild(closeModal);
-  modal.appendChild(container);
+  return github;
+}
 
-  container.appendChild(title);
-  container.appendChild(photo);
-  container.appendChild(description);
-  container.appendChild(website);
-  container.appendChild(github);
-
-  projectDiv.appendChild(modal);
-  return modal;
-};
 //
 // Open Modal
 const openModal = modal => {
@@ -174,9 +205,10 @@ for (let project of projectsData) {
   li.appendChild(link);
   projectsList.appendChild(li);
 
-  const modal = createModal(project, id);
+  const modal = addModal(project, id);
   const close = document.querySelector(`#${id} .close-modal`);
   link.onclick = event => {
+    // So that the page doesn't jump to the top when a modal closes
     event.preventDefault();
     openModal(modal);
     // So the scroll from the main page doesn't show up
