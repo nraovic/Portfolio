@@ -121,7 +121,7 @@ p {
   border-radius: 0.4rem;
   background: linear-gradient(/*#303f9f  #7b1fa2 */ rgb(81, 45, 168, 0.8) 70%, rgb(255, 255, 255) 70%);
 }
-.project-title-wrap::after {
+/*.project-title-wrap::after {
   content: '';
   background: url(photos/NeighborhoodMapPrint.png) center;
   opacity: 0.5;
@@ -131,7 +131,7 @@ p {
   right: 0;
   position: absolute;
   z-index: -1;
-}
+}*/
 .project-title-wrap {
   position: relative;
   display: flex;

@@ -16,7 +16,7 @@ const projectsData = [
     description:
       'A SPA that manages an online library. Built with React and React Router and bootstraped with Create React App.',
     githubLink: 'https://github.com/nraovic/reactnd-project-myreads-starter',
-    website: 'https://nraovic.github.io/reactnd-project-myreads-starter/'
+    website: ''
   },
   {
     title: 'Restaurant Reviews App',
@@ -24,8 +24,8 @@ const projectsData = [
     photoUrl: 'photos/RestaurantsPrint.png',
     description:
       'The aim of the project was to convert the design of a static page to be responsive and accessible for screen reader use. Additionaly, Service worker is enabled to creae a seamless offline experience for the users.',
-    githubLink: 'https://github.com/nraovic/neighborhood-map-app',
-    website: 'https://nraovic.github.io/neighborhood-map-app/'
+    githubLink: 'https://github.com/nraovic/mws-restaurant-stage-1',
+    website: ''
   },
   {
     title: 'Feed Reader Testing',
@@ -57,8 +57,8 @@ const projectsData = [
     title: 'UHost',
     keywords: 'JavaScript; HTML5; CSS3;',
     description:
-      'A dummy website developed for the CSS Fundamentals course covering all the major topics in CSS including Flexbox, Grid, Animation and Transitions',
-    githubLink: '',
+      'A dummy website developed for the CSS Fundamentals course covering all the major topics in CSS including Flexbox, Grid, Animation and Transitions. The course is still in progress.',
+    githubLink: 'https://github.com/nraovic/uHost',
     website: ''
   },
   {
@@ -70,7 +70,7 @@ const projectsData = [
   {
     title: 'Portfolio Site',
     keywords: 'JavaScript; HTML5; CSS3; Bootstrap; Responsive',
-    description: 'A first portfolio site hosting the projects from the Nanodegree',
+    description: 'The first portfolio site hosting the projects from the Nanodegree',
     githubLink: 'https://github.com/nraovic/Build-a-Portfolio-Site',
     website: 'https://nraovic.github.io/Build-a-Portfolio-Site/'
   }
