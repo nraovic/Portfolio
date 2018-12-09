@@ -76,8 +76,6 @@ const projectsData = [
   }
 ];
 
-const projectDiv = document.querySelector('.project');
-
 function addModal(project, id) {
   const projectDiv = document.querySelector('.project');
   const modal = document.createElement('div');
@@ -158,7 +156,6 @@ function createModalGithubPage(content) {
   return github;
 }
 
-//
 // Open Modal
 const openModal = modal => {
   modal.classList.add('open');
@@ -168,9 +165,45 @@ const openModal = modal => {
 const closeModal = modal => {
   modal.classList.remove('open');
 };
+
 // Create Project Element
 const projectsList = document.querySelector('.projects-list');
 
+function createProjectTile() {
+  const projectsList = document.querySelector('.projects-list');
+  const li = document.createElement('li');
+  projectsList.appendChild(li);
+  const link = document.createElement('a');
+  link.href = '#';
+  li.appendChild(link);
+  li.appendChild(createProjectTileWrap());
+  return link;
+}
+function createProjectTileWrap() {
+  const divWrap = document.createElement('div');
+  divWrap.className = 'div-wrap';
+  divWrap.appendChild(createProjectTileTitle());
+  divWrap.appendChild(createProjectTileKeywords());
+  return divWrap;
+}
+function createProjectTileTitle() {
+  const projectTitleWrap = document.createElement('div');
+  projectTitleWrap.className = 'project-title-wrap';
+  const projectTitle = document.createElement('h2');
+  projectTitle.className = 'project-title';
+  projectTitle.textContent = project.title;
+  projectTitleWrap.appendChild(projectTitle);
+  return projectTitleWrap;
+}
+function createProjectTileKeywords() {
+  const projectKeywordsWrap = document.createElement('div');
+  projectKeywordsWrap.className = 'project-keywords-wrap';
+  const keywords = document.createElement('p');
+  keywords.className = 'project-keywords';
+  keywords.textContent = project.keywords;
+  projectKeywordsWrap.appendChild(keywords);
+  return projectKeywordsWrap;
+}
 for (let project of projectsData) {
   const id = `project-modal-${project.title
     .replace(/[^a-zA-Z0-9 ]/g, '')
