@@ -70,7 +70,7 @@ p {
 .about-me .title {
   font-size: 2rem;
   font-weight: bold;
-  background: -webkit-linear-gradient(#212121, /*#acace6 #7B1FA2 */ #7b1fa2, #512da8, #7c4dff);
+  background: -webkit-linear-gradient(#212121, #7b1fa2, #512da8, #7c4dff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -119,19 +119,9 @@ p {
 .div-wrap {
   height: 100%;
   border-radius: 0.4rem;
-  background: linear-gradient(/*#303f9f  #7b1fa2 */ rgb(81, 45, 168, 0.8) 70%, rgb(255, 255, 255) 70%);
+  background: linear-gradient(rgb(81, 45, 168, 0.8) 70%, rgb(255, 255, 255) 70%);
 }
-/*.project-title-wrap::after {
-  content: '';
-  background: url(photos/NeighborhoodMapPrint.png) center;
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}*/
+
 .project-title-wrap {
   position: relative;
   display: flex;
@@ -264,18 +254,6 @@ p {
     margin: 0 auto;
   }
 }
-/*
-@media (min-width: 426px) and (max-width: 850px) {
-  .project-title {
-    font-weight: bold;
-    line-height: 160%;
-    padding-top: 7rem;
-    font-size: 1.2rem;
-  }
-  .about-me {
-    padding: 10rem 6rem 0 6rem;
-  }
-}*/
 
 @media (min-width: 1024px) {
   .about-me {

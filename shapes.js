@@ -3,14 +3,12 @@ const colors = ['#ADC4A0', '#f1e5d8', '#7C7875', '#55897D', '#ADC4A0', '#d2b48c'
 
 const numberofShapes = 8;
 const project = document.querySelector('.project');
-console.log(document.body.clientHeight, document.body.clientWidth);
-console.log(project.clientHeight, project.clientWidth);
 
 function getRandomPosition(element) {
-  var x = Math.abs(project.offsetHeight - element.offsetHeight);
-  var y = Math.abs(project.offsetWidth - element.offsetWidth);
-  var randomX = Math.floor(Math.random() * x);
-  var randomY = Math.floor(Math.random() * y);
+  let x = Math.abs(project.offsetHeight - element.offsetHeight);
+  let y = Math.abs(project.offsetWidth - element.offsetWidth);
+  let randomX = Math.floor(Math.random() * x);
+  let randomY = Math.floor(Math.random() * y);
   return [randomX, randomY];
 }
 
@@ -23,7 +21,7 @@ for (let shape of listOfShapes) {
     project.appendChild(shapeElement);
     shapeElement.className = 'shape';
     shapeElement.textContent = shape;
-    var xy = getRandomPosition(shapeElement);
+    const xy = getRandomPosition(shapeElement);
     shapeElement.style.top = xy[0] + 'px';
     shapeElement.style.left = xy[1] + 'px';
     shapeElement.style.zIndex = -1;

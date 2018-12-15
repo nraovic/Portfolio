@@ -76,22 +76,26 @@ const projectsData = [
   }
 ];
 
-function addModal(project, id) {
+function addModal(project) {
   const projectDiv = document.querySelector('.project');
   const modal = document.createElement('div');
-  modal.id = id;
+  //modal.id = id;
   modal.className = 'project-modal';
   projectDiv.appendChild(modal);
-  modal.appendChild(createModalClose());
+  modal.appendChild(createModalClose(modal));
   modal.appendChild(createModalContainer(project));
   return modal;
 }
-function createModalClose() {
+function createModalClose(modal) {
   const closeModal = document.createElement('a');
   closeModal.className = 'close-modal';
   const closeSign = document.createElement('i');
   closeSign.classList.add('fas', 'fa-times');
   closeModal.appendChild(closeSign);
+  closeModal.onclick = () => {
+    modal.classList.remove('open');
+    document.body.style.overflow = 'auto';
+  };
   return closeModal;
 }
 function createModalContainer(project) {
@@ -159,96 +163,56 @@ function createModalGithubPage(content) {
 // Open Modal
 const openModal = modal => {
   modal.classList.add('open');
+  // So the scroll from the main page doesn't show up
+  document.body.style.overflow = 'hidden';
 };
 
-//Close Modal
-const closeModal = modal => {
-  modal.classList.remove('open');
-};
-
-// Create Project Element
-const projectsList = document.querySelector('.projects-list');
-
-function createProjectTile() {
+function createProjectTile(project) {
   const projectsList = document.querySelector('.projects-list');
   const li = document.createElement('li');
   projectsList.appendChild(li);
   const link = document.createElement('a');
   link.href = '#';
   li.appendChild(link);
-  li.appendChild(createProjectTileWrap());
+  link.appendChild(createProjectTileWrap(project));
   return link;
 }
-function createProjectTileWrap() {
+function createProjectTileWrap(project) {
   const divWrap = document.createElement('div');
   divWrap.className = 'div-wrap';
-  divWrap.appendChild(createProjectTileTitle());
-  divWrap.appendChild(createProjectTileKeywords());
+  divWrap.appendChild(createProjectTileTitle(project.title));
+  divWrap.appendChild(createProjectTileKeywords(project.keywords));
   return divWrap;
 }
-function createProjectTileTitle() {
+function createProjectTileTitle(content) {
   const projectTitleWrap = document.createElement('div');
   projectTitleWrap.className = 'project-title-wrap';
   const projectTitle = document.createElement('h2');
   projectTitle.className = 'project-title';
-  projectTitle.textContent = project.title;
+  projectTitle.textContent = content;
   projectTitleWrap.appendChild(projectTitle);
   return projectTitleWrap;
 }
-function createProjectTileKeywords() {
+function createProjectTileKeywords(content) {
   const projectKeywordsWrap = document.createElement('div');
   projectKeywordsWrap.className = 'project-keywords-wrap';
   const keywords = document.createElement('p');
   keywords.className = 'project-keywords';
-  keywords.textContent = project.keywords;
+  keywords.textContent = content;
   projectKeywordsWrap.appendChild(keywords);
   return projectKeywordsWrap;
 }
-for (let project of projectsData) {
-  const id = `project-modal-${project.title
-    .replace(/[^a-zA-Z0-9 ]/g, '')
-    .replace(/ /g, '-')
-    .toLowerCase()}`;
-  const li = document.createElement('li');
-  const link = document.createElement('a');
-  const divWrap = document.createElement('div');
-  const projectTitleWrap = document.createElement('div');
-  const projectKeywordsWrap = document.createElement('div');
 
-  const h2 = document.createElement('h2');
-  const keywords = document.createElement('p');
-  link.href = '#';
-  divWrap.className = 'div-wrap';
-  projectTitleWrap.className = 'project-title-wrap';
-  projectKeywordsWrap.className = 'project-keywords-wrap';
-  h2.className = 'project-title';
-  keywords.className = 'project-keywords';
-  keywords.textContent = project.keywords;
-  h2.textContent = project.title;
-  /*randomPercent = Math.floor(Math.random() * 100);
-  console.log(randomPercent);
-  li.style.background = `background: linear-gradient(to top, #e8e3c7 80%, #adc4a0 80%) content-box;`;
-  console.log(randomPercent);
-  */
-  link.appendChild(divWrap);
-  divWrap.appendChild(projectTitleWrap);
-  divWrap.appendChild(projectKeywordsWrap);
-  projectTitleWrap.appendChild(h2);
-  projectKeywordsWrap.appendChild(keywords);
-  li.appendChild(link);
-  projectsList.appendChild(li);
-
-  const modal = addModal(project, id);
-  const close = document.querySelector(`#${id} .close-modal`);
-  link.onclick = event => {
-    // So that the page doesn't jump to the top when a modal closes
-    event.preventDefault();
-    openModal(modal);
-    // So the scroll from the main page doesn't show up
-    document.body.style.overflow = 'hidden';
-    close.onclick = () => {
-      closeModal(modal);
-      document.body.style.overflow = 'auto';
+function populatePageWithData() {
+  for (let project of projectsData) {
+    const projectTile = createProjectTile(project);
+    const modal = addModal(project);
+    projectTile.onclick = event => {
+      // So that the page doesn't jump to the top when a modal closes
+      event.preventDefault();
+      openModal(modal);
     };
-  };
+  }
 }
+
+populatePageWithData();
