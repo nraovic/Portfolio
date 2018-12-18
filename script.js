@@ -23,14 +23,14 @@ const projectsData = [
     keywords: 'JavaScript; HTML5; CSS3; Responsive; Service Worker; Accessibility;',
     photoUrl: 'photos/RestaurantsPrint.png',
     description:
-      'The aim of the project was to convert the design of a static page to be responsive and accessible for screen reader use. Additionaly, Service worker is enabled to creae a seamless offline experience for the users.',
+      'The aim of the project was to convert the design of a static page to be responsive and accessible for screen reader use. Additionaly, Service worker is enabled to create a seamless offline experience for the users.',
     githubLink: 'https://github.com/nraovic/mws-restaurant-stage-1',
     website: ''
   },
   {
     title: 'Feed Reader Testing',
     keywords: 'JavaScript; Jasmin;',
-    photoUrl: 'photos/MyReadsPrint.png',
+    photoUrl: '',
     description:
       'The aim was to write a number of test suites in Jasmine for a web-based application that reads RSS feeds.',
     githubLink: 'https://github.com/nraovic/frontend-nanodegree-feedreader',
